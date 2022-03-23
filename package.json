@@ -2,7 +2,7 @@
   "name": "@thomashagstrom/npm-github-react-native",
   "author": "Thomas Hagström",
   "version": "0.1.5",
-  "license": "UNLICENSED",
+  "license": "APACHE",
   "publishConfig": {
     "@thomashagstrom:registry": "https://npm.pkg.github.com",
     "access": "restricted"
@@ -97,6 +97,7 @@
     "@types/react-native-vector-icons": "^6.4.10",
     "@types/react-test-renderer": "^17.0.1",
     "@types/uuid": "^8.3.1",
+    "all-contributors-cli": "^6.20.0",
     "babel-jest": "^27.3.1",
     "babel-loader": "^8.2.3",
     "core-js": "^3.19.1",
