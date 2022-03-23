@@ -4,60 +4,61 @@
 
 This template allows you to bootstrap a private React-Native NPM package hosted on GitHub, perfect for propritory code within your organisation!
 
-  * [Getting started](#getting-started)
-    + [Requirements](#requirements)
-    + [Recommended tools](#recommended-tools)
-      - [VS Code plugins](#vs-code-plugins)
-    + [Installation](#installation)
-  * [Build](#build)
-  * [Run Storybook](#run-storybook)
-    + [iOS](#ios)
-    + [Android](#android)
-  * [Configuration](#configuration)
-    + [Jest](#jest)
-    + [Bundle Analysis](#bundle-analysis)
-      - [Setup Files](#setup-files)
-    + [Rollup](#rollup)
-    + [TypeScript](#typescript)
-  * [Continuous Integration](#continuous-integration)
-    + [GitHub Actions](#github-actions)
-  * [Optimizations](#optimizations)
-  * [Module Formats](#module-formats)
-  * [Named Exports](#named-exports)
-  * [Publish a new version](#publish-a-new-version)
-  * [Consume package](#consume-package)
-  * [Contributors ✨](#contributors--)
+- [Getting started](#getting-started)
+  - [Requirements](#requirements)
+  - [Recommended tools](#recommended-tools)
+    - [VS Code plugins](#vs-code-plugins)
+  - [Installation](#installation)
+- [Build](#build)
+- [Run Storybook](#run-storybook)
+  - [iOS](#ios)
+  - [Android](#android)
+- [Configuration](#configuration)
+  - [Jest](#jest)
+  - [Bundle Analysis](#bundle-analysis)
+    - [Setup Files](#setup-files)
+  - [Rollup](#rollup)
+  - [TypeScript](#typescript)
+- [Continuous Integration](#continuous-integration)
+  - [GitHub Actions](#github-actions)
+- [Optimizations](#optimizations)
+- [Module Formats](#module-formats)
+- [Named Exports](#named-exports)
+- [Publish a new version](#publish-a-new-version)
+- [Consume package](#consume-package)
+- [Contributors ✨](#contributors--)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 ![](https://media.giphy.com/media/wqS44mdZqYgHpLXv4j/giphy.gif)
 
-  * [Getting started](#getting-started)
-    + [Requirements](#requirements)
-    + [Recommended tools](#recommended-tools)
-      - [VS Code plugins](#vs-code-plugins)
-    + [Installation](#installation)
-  * [Commands](#commands)
-  * [Configuration](#configuration)
-    + [Jest](#jest)
-    + [Bundle Analysis](#bundle-analysis)
-      - [Setup Files](#setup-files)
-    + [Rollup](#rollup)
-    + [TypeScript](#typescript)
-  * [Storybook](#storybook)
-  * [Continuous Integration](#continuous-integration)
-    + [GitHub Actions](#github-actions)
-  * [Optimizations](#optimizations)
-  * [Module Formats](#module-formats)
-  * [Named Exports](#named-exports)
-  * [Publish a new version](#publish-a-new-version)
-  * [Consume package](#consume-package)
-  * [Contributors ✨](#contributors--)
+- [Getting started](#getting-started)
+  - [Requirements](#requirements)
+  - [Recommended tools](#recommended-tools)
+    - [VS Code plugins](#vs-code-plugins)
+  - [Installation](#installation)
+- [Commands](#commands)
+- [Configuration](#configuration)
+  - [Jest](#jest)
+  - [Bundle Analysis](#bundle-analysis)
+    - [Setup Files](#setup-files)
+  - [Rollup](#rollup)
+  - [TypeScript](#typescript)
+- [Storybook](#storybook)
+- [Continuous Integration](#continuous-integration)
+  - [GitHub Actions](#github-actions)
+- [Optimizations](#optimizations)
+- [Module Formats](#module-formats)
+- [Named Exports](#named-exports)
+- [Publish a new version](#publish-a-new-version)
+- [Consume package](#consume-package)
+- [Contributors ✨](#contributors--)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 ## Getting started
-Follow the **[React-Native Expo installation guide](https://reactnative.dev/docs/environment-setup)** to set up a developer environment. 
+
+Follow the **[React-Native Expo installation guide](https://reactnative.dev/docs/environment-setup)** to set up a developer environment.
 
 This project is bootstrapped using [TSDX](https://tsdx.io/), but with some heavy modifications to produce React-Native Expo compatible code.
 
@@ -116,10 +117,10 @@ npm start # or yarn start
 
 This builds to `/dist` and runs the project in watch mode so any edits you save inside `src` causes a rebuild to `/dist`.
 
-* To do a one-off build, use `npm run build` or `yarn build`.
-* To run tests, see **[jest](#jest)**
-* To release, see **[Publish a new version](#publish-a-new-version)**
-* To run, see **[Storybook](#storybook)**
+- To do a one-off build, use `npm run build` or `yarn build`.
+- To run tests, see **[jest](#jest)**
+- To release, see **[Publish a new version](#publish-a-new-version)**
+- To run, see **[Storybook](#storybook)**
 
 ## Run Storybook
 
@@ -222,7 +223,7 @@ tsconfig.json
 
 ### Rollup
 
-TSDX uses [Rollup](https://rollupjs.org) as a bundler and generates multiple rollup configs for various module formats and build settings. 
+TSDX uses [Rollup](https://rollupjs.org) as a bundler and generates multiple rollup configs for various module formats and build settings.
 
 This is not very optimal for React-Native with Babel so we've opted for regular TypeScript build instead.
 
@@ -301,6 +302,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <table>
   <tr>
     <td align="center"><a href="https://jaredpalmer.com/"><img src="https://avatars.githubusercontent.com/u/4060187?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jared Palmer</b></sub></a><br /><a href="#plugin-jaredpalmer" title="Plugin/utility libraries">🔌</a></td>
+    <td align="center"><a href="https://github.com/thomashagstrom"><img src="https://avatars.githubusercontent.com/u/396545?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Thomas Hagström</b></sub></a><br /><a href="#projectManagement-thomashagstrom" title="Project Management">📆</a></td>
   </tr>
 </table>
 
