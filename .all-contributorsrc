@@ -1,0 +1,33 @@
+{
+  "projectName": "home-order-stripe",
+  "projectOwner": "thomashagstrom",
+  "repoType": "github",
+  "repoHost": "https://github.com",
+  "files": [
+    "README.md"
+  ],
+  "imageSize": 100,
+  "commit": true,
+  "commitConvention": "eslint",
+  "contributors": [
+    {
+      "login": "jaredpalmer",
+      "name": "Jared Palmer",
+      "avatar_url": "https://avatars.githubusercontent.com/u/4060187?v=4",
+      "profile": "https://jaredpalmer.com/",
+      "contributions": [
+        "plugin"
+      ]
+    },
+    {
+      "login": "thomashagstrom",
+      "name": "Thomas Hagström",
+      "avatar_url": "https://avatars.githubusercontent.com/u/396545?v=4",
+      "profile": "https://github.com/thomashagstrom",
+      "contributions": [
+        "projectManagement"
+      ]
+    }
+  ],
+  "contributorsPerLine": 7
+}
