@@ -1,0 +1,39 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "module": "esnext",
+    "lib": ["dom", "esnext"],
+    "importHelpers": true,
+    "declaration": true,
+    "sourceMap": true,
+    "strict": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "moduleResolution": "node",
+    "jsx": "react-native",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "noEmit": false
+  },
+  "exclude": [
+    "./node_modules/*",
+    "coverage",
+    "**/__mocks__/*",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "**/storybook",
+    "assets",
+    "./babel.config.js",
+    "./metro.config.js",
+    "./jest.config.js",
+    "dist",
+    "tsdx.config.js",
+    "main.ts",
+    "App.tsx"
+  ]
+}

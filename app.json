@@ -1,0 +1,92 @@
+{
+  "expo": {
+    "entryPoint": "./App.tsx",
+    "name": "HomeOrderUsers",
+    "slug": "homeorderusers",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon/Icon-marketing-1024x1024.png",
+    "scheme": "homeorderusers",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/icon/Icon-marketing-1024x1024.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#000000"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 100000
+    },
+    "notification": {
+      "color": "#52c5ff",
+      "iosDisplayInForeground": true
+    },
+    "assetBundlePatterns": ["**/*"],
+    "ios": {
+      "supportsTablet": false,
+      "buildNumber": "1.0.0",
+      "usesIcloudStorage": true,
+      "infoPlist": {
+        "CFBundleAllowMixedLocalizations": true,
+        "LSApplicationQueriesSchemes": [
+          "comgooglemaps",
+          "citymapper",
+          "uber",
+          "lyft",
+          "waze"
+        ],
+        "NSLocationWhenInUseUsageDescription": "Plats används för att hitta adresser",
+        "NSLocationAlwaysUsageDescription": "Plats används för att hitta adresser",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "Plats används för att hitta adresser"
+      }
+    },
+    "android": {
+      "versionCode": 2,
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/icon/ic_launcher.png",
+        "backgroundColor": "#FFFFFF"
+      }
+    },
+    "web": {
+      "favicon": "./assets/icon/Icon-40x40@2x.png",
+      "config": {
+        "firebase": {
+          "apiKey": "AIzaSyCIupgYW-Rq1KwHck5TXqpBTBKQKDMX8Qw",
+          "authDomain": "order-home.firebaseapp.com",
+          "projectId": "order-home",
+          "storageBucket": "order-home.appspot.com",
+          "messagingSenderId": "811777740267",
+          "appId": "1:811777740267:web:fb873b26678d7034f6ddae",
+          "measurementId": "G-6HNPRZNS1R"
+        }
+      }
+    },
+    "extra": {
+      "CONTENTFUL_SPACEID": "0009g5psffdo",
+      "CONTENTFUL_TOKEN": "qQeP8dgUndI4jsAs_NJM14yV1QXtarEIO-XHurmhLW4",
+      "REACT_APP_STRIPE_PUBLISHABLE_KEY": "pk_test_51HuYbnDrIFXgciI2jmEZMprhsbnho0UfJCPYWmTdGx7ZNWpCqayjBSSqBA06Kss2JUcXT6loga3TCh6HCADbMNra00IMpj57c6",
+      "APP_NAME": "HomeOrder",
+      "BUNDLE_IDENTIFIER": "se.crossplatform.homeorder",
+      "ANDROID_VERSION_NAME": "0.1",
+      "ANDROID_VERSION_CODE": "1",
+      "GOOGLE_PLACES_API_KEY": "AIzaSyD9w2RK-6TDqq-LdJ02nbbYlmfh8RIlHEU",
+      "IOS_MAPS": "AIzaSyDzswxsk7j_Ay-K-s8ZAxIXsy31BJjUPIU",
+      "ANDROID_MAPS": "AIzaSyAvfS_VBgCnzcU1IGoCA4rrJjWyFB-linM",
+      "COMPANY_NAME": "LZ Sverige AB",
+      "COMPANY_ORG": "559270-1154",
+      "COMPANY_ADDRESS": "Nynäsvägen 338, 122 34 Enskede",
+      "COMPANY_PHONE": "08-387 060",
+      "SENTRY_DSN": "https://52f5d50ebc57433bb86f25741dd21895@o139340.ingest.sentry.io/5590909",
+      "COOKING_TIME": "50",
+      "FIREBASE_APIKEY": "AIzaSyCIupgYW-Rq1KwHck5TXqpBTBKQKDMX8Qw",
+      "FIREBASE_AUTHDOMAIN": "order-home.firebaseapp.com",
+      "FIREBASE_PROJECTID": "order-home",
+      "FIREBASE_STORAGEBUCKET": "order-home.appspot.com",
+      "FIREBASE_MESSAGINGSENDERID": "811777740267",
+      "FIREBASE_APPID": "1:811777740267:web:fb873b26678d7034f6ddae",
+      "FIREBASE_MEASUREMENTID": "G-6HNPRZNS1R"
+    },
+    "description": "",
+    "sdkVersion": "44.0.0"
+  },
+  "name": "orderhomeusers"
+}

@@ -1,0 +1,313 @@
+<!-- language-all: typescript -->
+
+# GitHub NPM Package RN Expo TS Template
+
+This template allows you to bootstrap a private React-Native NPM package hosted on GitHub, perfect for propritory code within your organisation!
+
+  * [Getting started](#getting-started)
+    + [Requirements](#requirements)
+    + [Recommended tools](#recommended-tools)
+      - [VS Code plugins](#vs-code-plugins)
+    + [Installation](#installation)
+  * [Build](#build)
+  * [Run Storybook](#run-storybook)
+    + [iOS](#ios)
+    + [Android](#android)
+  * [Configuration](#configuration)
+    + [Jest](#jest)
+    + [Bundle Analysis](#bundle-analysis)
+      - [Setup Files](#setup-files)
+    + [Rollup](#rollup)
+    + [TypeScript](#typescript)
+  * [Continuous Integration](#continuous-integration)
+    + [GitHub Actions](#github-actions)
+  * [Optimizations](#optimizations)
+  * [Module Formats](#module-formats)
+  * [Named Exports](#named-exports)
+  * [Publish a new version](#publish-a-new-version)
+  * [Consume package](#consume-package)
+  * [Contributors ✨](#contributors--)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
+![](https://media.giphy.com/media/wqS44mdZqYgHpLXv4j/giphy.gif)
+
+  * [Getting started](#getting-started)
+    + [Requirements](#requirements)
+    + [Recommended tools](#recommended-tools)
+      - [VS Code plugins](#vs-code-plugins)
+    + [Installation](#installation)
+  * [Commands](#commands)
+  * [Configuration](#configuration)
+    + [Jest](#jest)
+    + [Bundle Analysis](#bundle-analysis)
+      - [Setup Files](#setup-files)
+    + [Rollup](#rollup)
+    + [TypeScript](#typescript)
+  * [Storybook](#storybook)
+  * [Continuous Integration](#continuous-integration)
+    + [GitHub Actions](#github-actions)
+  * [Optimizations](#optimizations)
+  * [Module Formats](#module-formats)
+  * [Named Exports](#named-exports)
+  * [Publish a new version](#publish-a-new-version)
+  * [Consume package](#consume-package)
+  * [Contributors ✨](#contributors--)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
+
+## Getting started
+Follow the **[React-Native Expo installation guide](https://reactnative.dev/docs/environment-setup)** to set up a developer environment. 
+
+This project is bootstrapped using [TSDX](https://tsdx.io/), but with some heavy modifications to produce React-Native Expo compatible code.
+
+> This TSDX setup is meant for developing libraries (not apps!) that can be published to NPM. If you’re looking to build a Node app, you could use `ts-node-dev`, plain `ts-node`, or simple `tsc`.
+
+> If you’re new to TypeScript, checkout [this handy cheatsheet](https://devhints.io/typescript)
+
+### Requirements
+
+- [Node.js LTS release](https://nodejs.org/en/)
+- [Git](https://git-scm.com/)
+- [Watchman](https://facebook.github.io/watchman/docs/install#buildinstall) for macOS or Linux users
+
+### Recommended tools
+
+- [Visual Studio Code](https://code.visualstudio.com/) - cross-platoform modular IDE with [React-Native support](https://marketplace.visualstudio.com/items?itemName=msjsdiag.vscode-react-native) and integrated [terminal](https://code.visualstudio.com/docs/editor/integrated-terminal).
+- Windows users: [PowerShell](https://docs.microsoft.com/en-us/powershell/scripting/dev-cross-plat/vscode/using-vscode?view=powershell-7.2), [Bash via WSL](https://docs.microsoft.com/en-us/windows/wsl/about)
+
+Optionally install [Yarn](https://classic.yarnpkg.com/en/) - a fast package manager for installing NPM dependencies. However, do not add new packages using Yarn as that would create a yarn.lock.
+
+#### VS Code plugins
+
+Just a recommendation based on what worked for this developer:
+
+- **[React-Native Tools](https://marketplace.visualstudio.com/items?itemName=msjsdiag.vscode-react-native)**
+- **[Expo tools](https://marketplace.visualstudio.com/items?itemName=byCedric.vscode-expo)**
+- **[Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)**
+- **[TypeScript Hero](https://marketplace.visualstudio.com/items?itemName=rbbit.typescript-hero)**
+- **[TypeScript importer](https://marketplace.visualstudio.com/items?itemName=pmneo.tsimporter)**
+- **[TypeScript toolbox](https://marketplace.visualstudio.com/items?itemName=DSKWRK.vscode-generate-getter-setter)**
+- **[Add jsdoc comments](https://marketplace.visualstudio.com/items?itemName=stevencl.addDocComments)**
+- **[JSDoc markdown highlighting](https://marketplace.visualstudio.com/items?itemName=bierner.jsdoc-markdown-highlighting)**
+- **[ES7 React/Redux/GraphQL/React-Native snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets)**
+- **[ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)**
+- **[GitHub Pull Requests](https://marketplace.visualstudio.com/items?itemName=GitHub.vscode-pull-request-github)**
+- **[Markdown editor](https://marketplace.visualstudio.com/items?itemName=zaaack.markdown-editor)**
+- **[HTML Preview](https://marketplace.visualstudio.com/items?itemName=tht13.html-preview-vscode)**
+
+### Installation
+
+Once above environment is in place you can open a [terminal](https://code.visualstudio.com/docs/editor/integrated-terminal) in the repository root (in VS Code).
+
+```
+npm install # or yarn install
+```
+
+## Build
+
+TSDX scaffolds your new library inside `/src`.
+
+To compile the code into the NPM deployable product, run
+
+```bash
+npm start # or yarn start
+```
+
+This builds to `/dist` and runs the project in watch mode so any edits you save inside `src` causes a rebuild to `/dist`.
+
+* To do a one-off build, use `npm run build` or `yarn build`.
+* To run tests, see **[jest](#jest)**
+* To release, see **[Publish a new version](#publish-a-new-version)**
+* To run, see **[Storybook](#storybook)**
+
+## Run Storybook
+
+The app is integrated with [Storybook](https://github.com/storybookjs/react-native) which provides an environment to develop and test components in isolation.
+
+Make sure you have a react-native environment for [Expo](https://www.expo.io) setup.
+
+To run, first start the metro bundler:
+
+```bash
+npm run start:native # or yarn start:native
+```
+
+In a second terminal, run react-native:
+
+### iOS
+
+```bash
+npm run ios # or yarn ios
+```
+
+### Android
+
+```bash
+npm run android # or yarn android
+```
+
+Configuration is found in the [storybook/index.tsx](./storybook/index.tsx) entry point. Stories are added to [storybook/stories/index.tsx](./storybook/stories/index.tsx).
+
+For a new component stories should be added that replicate the requirements like Figma designs.
+
+Storybook specific components are written that connect the component to [Storybook knobs](https://github.com/storybookjs/storybook/tree/master/addons/knobs#available-knobs) that allow manipulation of the props while running the app.
+
+_[LoginForm.stories.tsx](storybook/stories/LoginForm/LoginForm.stories.tsx)_
+
+Notice how we use `text` and `action` from storybook to make these dynamic values that can be changed in the storybook knobs UI:
+
+```typescript
+import {action} from '@storybook/addon-actions';
+import {text} from '@storybook/addon-knobs';
+import {storiesOf} from '@storybook/react-native';
+import React from 'react';
+
+storiesOf('LoginForm', module)
+  .addDecorator(getStory => <CenterView>{getStory()}</CenterView>)
+  .add('with text', () => (
+    <LoginForm mode="contained" onLogin={action('onLogin')}>
+      {text('Text', 'Login')}
+    </LoginForm>
+  ))
+  .add('with some emoji', () => (
+    <LoginForm mode="outlined" onLogin={action('clicked-emoji')}>
+      😀 😎 👍 💯
+    </LoginForm>
+  ));
+```
+
+## Configuration
+
+Code quality is set up for you with `prettier`, `husky`, and `lint-staged`. Adjust the respective fields in `package.json` accordingly.
+
+### Jest
+
+The project uses [**Jest**](https://jestjs.io/docs/tutorial-react-native) to run unit tests. Together with [Testing Library React Native](https://testing-library.com/docs/react-native-testing-library/intro/) it allows powerful testing capabilities without use of a real device.
+
+See also: _[WritingTests.md](./WritingTests.md)_
+
+Find all available commands in [`package.json`](./package.json#L26-L34).
+
+The `test` command uses CI config, so when developing use below command for optimal performance.
+
+```
+npm run test:dev # or yarn test:dev
+```
+
+Jest has a `--watch` parameter that looks for changed files and only tests your changes, in real time. There's an alias for this parameter:
+
+```
+npm run test:watch # or yarn test:watch
+```
+
+### Bundle Analysis
+
+[`size-limit`](https://github.com/ai/size-limit) is set up to calculate the real cost of your library with `npm run size` and visualize the bundle with `npm run analyze`.
+
+#### Setup Files
+
+This is the folder structure we set up for you:
+
+```txt
+/src
+  index.tsx       # EDIT THIS
+/test
+  blah.test.tsx   # EDIT THIS
+.gitignore
+package.json
+README.md         # EDIT THIS
+tsconfig.json
+```
+
+### Rollup
+
+TSDX uses [Rollup](https://rollupjs.org) as a bundler and generates multiple rollup configs for various module formats and build settings. 
+
+This is not very optimal for React-Native with Babel so we've opted for regular TypeScript build instead.
+
+### TypeScript
+
+`tsconfig.json` is set up to interpret `dom` and `esnext` types, as well as `react` for `jsx`. Adjust according to your needs.
+
+## Continuous Integration
+
+### GitHub Actions
+
+Two actions are added by default:
+
+- `main` which installs deps w/ cache, lints, tests, and builds on all pushes against a Node and OS matrix
+- `size` which comments cost comparison of your library on every pull request using [`size-limit`](https://github.com/ai/size-limit)
+
+## Optimizations
+
+Please see the main `tsdx` [optimizations docs](https://github.com/palmerhq/tsdx#optimizations). In particular, know that you can take advantage of development-only optimizations:
+
+```js
+// ./types/index.d.ts
+declare var __DEV__: boolean;
+
+// inside your code...
+if (__DEV__) {
+  console.log('foo');
+}
+```
+
+You can also choose to install and use [invariant](https://github.com/palmerhq/tsdx#invariant) and [warning](https://github.com/palmerhq/tsdx#warning) functions.
+
+## Module Formats
+
+CJS, ESModules, and UMD module formats are supported.
+
+The appropriate paths are configured in `package.json` and `dist/index.js` accordingly. Please report if any issues are found.
+
+## Named Exports
+
+Per Palmer Group guidelines, [always use named exports.](https://github.com/palmerhq/typescript#exports) Code split inside your React app instead of your React library.
+
+## Publish a new version
+
+1. Up [version](https://docs.npmjs.com/about-semantic-versioning) in [`package.json`](./package.json) using the script `npm run version:next` or `yarn version:next`
+2. Above should tag and push
+3. [Draft a new Release](https://github.com/thomashagstrom/npm-github/releases) from that tag
+4. GitHub Action builds and publishes
+
+## Consume package
+
+These details are valid if the package is private scoped.
+
+1. Open the lib where u want to consume the private NPM package
+2. Create a [personal access token](https://github.com/settings/tokens) with `write:packages` scope
+3. Config [`.npmrc`](./.npmrc) to use the token (below)
+4. Install the scoped package, e.g. `yarn add https://github.com/thomashagstrom/npm-github`
+
+Example [`npmrc`](./.npmrc) config for consuming `thomashagstrom` org scoped packages:
+
+```
+@thomashagstrom:registry=https://npm.pkg.github.com/thomashagstrom
+//npm.pkg.github.com/:_authToken=MyTopSecretTokenWithPackageScope
+```
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+
+<!-- prettier-ignore-start -->
+
+<!-- markdownlint-disable -->
+
+<table>
+  <tr>
+    <td align="center"><a href="https://jaredpalmer.com/"><img src="https://avatars.githubusercontent.com/u/4060187?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jared Palmer</b></sub></a><br /><a href="#plugin-jaredpalmer" title="Plugin/utility libraries">🔌</a></td>
+  </tr>
+</table>
+
+<!-- markdownlint-restore -->
+
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
