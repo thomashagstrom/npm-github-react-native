@@ -293,19 +293,16 @@ Example [`npmrc`](./.npmrc) config for consuming `thomashagstrom` org scoped pac
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
-
 <!-- prettier-ignore-start -->
-
 <!-- markdownlint-disable -->
-
 <table>
   <tr>
     <td align="center"><a href="https://jaredpalmer.com/"><img src="https://avatars.githubusercontent.com/u/4060187?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Jared Palmer</b></sub></a><br /><a href="#plugin-jaredpalmer" title="Plugin/utility libraries">🔌</a></td>
+    <td align="center"><a href="https://github.com/thomashagstrom"><img src="https://avatars.githubusercontent.com/u/396545?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Thomas Hagström</b></sub></a><br /><a href="#projectManagement-thomashagstrom" title="Project Management">📆</a></td>
   </tr>
 </table>
 
 <!-- markdownlint-restore -->
-
 <!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
