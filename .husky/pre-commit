@@ -1,0 +1,15 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+. "$(dirname "$0")/common.sh"
+echo 🤓 - "Hi, I am Husky, let me check and fix your staged code..." 
+if npm run test:cov; then
+    npm run lint
+    echo 🤓 - "All good, your code is commited!"
+else
+    echo 😡 - "I couldn't fix the issue above! ☝️ ☝️ ☝️ ☝️ ☝️ ☝️ ☝️ ☝️ ☝️ ☝️ ☝️"
+    echo 🤓  - "Therefore I did not commit your code! 😈" 
+    exit 1
+fi
+
+
+

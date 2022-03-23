@@ -1,0 +1,11 @@
+#!/bin/sh
+. "$(dirname "$0")/_/husky.sh"
+. "$(dirname "$0")/common.sh"
+
+echo 😎 - "Hi, I am Husky, I will run few checks before pushing the changes" 
+if npm run test && npm run lint && npm run build ;then
+        echo 🚀 - "Code away!"
+else
+    echo 😡 - "one of the checks failed, checkout the issue above! ☝️ ☝️ ☝️ ☝️ ☝️ ☝️ ☝️ ☝️ ☝️ ☝️ ☝️"
+    exit 1
+fi
