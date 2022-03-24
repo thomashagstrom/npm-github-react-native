@@ -4,6 +4,8 @@
 
 This template allows you to bootstrap a private React-Native NPM package hosted on GitHub, perfect for propritory code within your organisation!
 
+[![](https://media.giphy.com/media/wqS44mdZqYgHpLXv4j/giphy.gif)](#run-storybook)
+
 - [Getting started](#getting-started)
   - [Requirements](#requirements)
   - [Recommended tools](#recommended-tools)
@@ -29,8 +31,6 @@ This template allows you to bootstrap a private React-Native NPM package hosted 
 - [Contributors ✨](#contributors--)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
-![](https://media.giphy.com/media/wqS44mdZqYgHpLXv4j/giphy.gif)
 
 - [Getting started](#getting-started)
   - [Requirements](#requirements)
@@ -134,7 +134,7 @@ To run, first start the metro bundler:
 npm run start:native # or yarn start:native
 ```
 
-In a second terminal, run react-native:
+Use the terminal commands to start iOS (press **i**), Android (press **a**) or start developer tools (press **d**). Optinally, you can use a second terminal to run commands:
 
 ### iOS
 
