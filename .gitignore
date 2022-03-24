@@ -50,3 +50,6 @@ yarn-error.log*
 **/*.tsbuildinfo
 
 coverage
+
+# do NOT commit sensitive data such as keys
+app.json
