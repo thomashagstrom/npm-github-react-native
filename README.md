@@ -4,55 +4,42 @@
 
 This template allows you to bootstrap a private React-Native NPM package hosted on GitHub, perfect for propritory code within your organisation!
 
+![React Native](https://img.shields.io/badge/react_native-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) [![Expo](https://img.shields.io/badge/expo-blue?style=for-the-badge&logo=expo&logoColor=%000000)](#expo)
+[![Storybook](https://img.shields.io/badge/-Storybook-FF4785?style=for-the-badge&logo=storybook&logoColor=white)](#run-storybook)
+[![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)](#typescript)
+[![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)](#jest) [![Testing-Library](https://img.shields.io/badge/-TestingLibrary-%23E33332?style=for-the-badge&logo=testing-library&logoColor=white)
+](#jest) [![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)](#linting) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=for-the-badge)](https://github.com/prettier/prettier)
+[![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/thomashagstrom/npm-github-react-native/actions/new)
+[![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/thomashagstrom/npm-github-react-native) [![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
+](#recommended-tools) [![NPM](https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white)](https://github.com/thomashagstrom/npm-github-react-native/packages/)
+
 [![](https://media.giphy.com/media/wqS44mdZqYgHpLXv4j/giphy.gif)](#run-storybook)
 
-- [Getting started](#getting-started)
-  - [Requirements](#requirements)
-  - [Recommended tools](#recommended-tools)
-    - [VS Code plugins](#vs-code-plugins)
-  - [Installation](#installation)
-- [Build](#build)
-- [Run Storybook](#run-storybook)
-  - [iOS](#ios)
-  - [Android](#android)
-- [Configuration](#configuration)
-  - [Jest](#jest)
-  - [Bundle Analysis](#bundle-analysis)
-    - [Setup Files](#setup-files)
-  - [Rollup](#rollup)
-  - [TypeScript](#typescript)
-- [Continuous Integration](#continuous-integration)
-  - [GitHub Actions](#github-actions)
-- [Optimizations](#optimizations)
-- [Module Formats](#module-formats)
-- [Named Exports](#named-exports)
-- [Publish a new version](#publish-a-new-version)
-- [Consume package](#consume-package)
-- [Contributors ✨](#contributors--)
-
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
-
-- [Getting started](#getting-started)
-  - [Requirements](#requirements)
-  - [Recommended tools](#recommended-tools)
-    - [VS Code plugins](#vs-code-plugins)
-  - [Installation](#installation)
-- [Commands](#commands)
-- [Configuration](#configuration)
-  - [Jest](#jest)
-  - [Bundle Analysis](#bundle-analysis)
-    - [Setup Files](#setup-files)
-  - [Rollup](#rollup)
-  - [TypeScript](#typescript)
-- [Storybook](#storybook)
-- [Continuous Integration](#continuous-integration)
-  - [GitHub Actions](#github-actions)
-- [Optimizations](#optimizations)
-- [Module Formats](#module-formats)
-- [Named Exports](#named-exports)
-- [Publish a new version](#publish-a-new-version)
-- [Consume package](#consume-package)
-- [Contributors ✨](#contributors--)
+  * [Getting started](#getting-started)
+    + [Requirements](#requirements)
+    + [Recommended tools](#recommended-tools)
+      - [VS Code plugins](#vs-code-plugins)
+    + [Installation](#installation)
+  * [Build](#build)
+  * [Expo](#expo)
+  * [Run Storybook](#run-storybook)
+    + [iOS](#ios)
+    + [Android](#android)
+  * [Linting](#linting)
+  * [Continuous Integration](#continuous-integration)
+    + [GitHub Actions](#github-actions)
+  * [Optimizations](#optimizations)
+  * [Module Formats](#module-formats)
+  * [Named Exports](#named-exports)
+  * [Publish a new version](#publish-a-new-version)
+  * [Consume package](#consume-package)
+  * [Configuration](#configuration)
+    + [Jest](#jest)
+    + [Bundle Analysis](#bundle-analysis)
+      - [Setup Files](#setup-files)
+    + [Rollup](#rollup)
+    + [TypeScript](#typescript)
+  * [Contributors ✨](#contributors--)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
@@ -112,7 +99,7 @@ TSDX scaffolds your new library inside `/src`.
 To compile the code into the NPM deployable product, run
 
 ```bash
-npm start # or yarn start
+npm run start # or yarn start
 ```
 
 This builds to `/dist` and runs the project in watch mode so any edits you save inside `src` causes a rebuild to `/dist`.
@@ -121,6 +108,13 @@ This builds to `/dist` and runs the project in watch mode so any edits you save 
 - To run tests, see **[jest](#jest)**
 - To release, see **[Publish a new version](#publish-a-new-version)**
 - To run, see **[Storybook](#storybook)**
+
+## Expo
+
+The app is built using [Expo](https://docs.expo.io/) for React-Native. It allows working with JavaScript without native code and instant releases Over The Air (OTA). The commands (above) uses Expo to start, run, build and deploy the app.
+
+- [app.json](./app.json) - Expo config
+- [expo](./.expo/README.md) - shared Expo config for all developers
 
 ## Run Storybook
 
@@ -178,58 +172,12 @@ storiesOf('LoginForm', module)
   ));
 ```
 
-## Configuration
+## Linting
+The project is setup to use ESLINT with Prettier.
 
-Code quality is set up for you with `prettier`, `husky`, and `lint-staged`. Adjust the respective fields in `package.json` accordingly.
-
-### Jest
-
-The project uses [**Jest**](https://jestjs.io/docs/tutorial-react-native) to run unit tests. Together with [Testing Library React Native](https://testing-library.com/docs/react-native-testing-library/intro/) it allows powerful testing capabilities without use of a real device.
-
-See also: _[WritingTests.md](./WritingTests.md)_
-
-Find all available commands in [`package.json`](./package.json#L26-L34).
-
-The `test` command uses CI config, so when developing use below command for optimal performance.
-
+```bash
+npm run lint # or yarn lint
 ```
-npm run test:dev # or yarn test:dev
-```
-
-Jest has a `--watch` parameter that looks for changed files and only tests your changes, in real time. There's an alias for this parameter:
-
-```
-npm run test:watch # or yarn test:watch
-```
-
-### Bundle Analysis
-
-[`size-limit`](https://github.com/ai/size-limit) is set up to calculate the real cost of your library with `npm run size` and visualize the bundle with `npm run analyze`.
-
-#### Setup Files
-
-This is the folder structure we set up for you:
-
-```txt
-/src
-  index.tsx       # EDIT THIS
-/test
-  blah.test.tsx   # EDIT THIS
-.gitignore
-package.json
-README.md         # EDIT THIS
-tsconfig.json
-```
-
-### Rollup
-
-TSDX uses [Rollup](https://rollupjs.org) as a bundler and generates multiple rollup configs for various module formats and build settings.
-
-This is not very optimal for React-Native with Babel so we've opted for regular TypeScript build instead.
-
-### TypeScript
-
-`tsconfig.json` is set up to interpret `dom` and `esnext` types, as well as `react` for `jsx`. Adjust according to your needs.
 
 ## Continuous Integration
 
@@ -288,6 +236,59 @@ Example [`npmrc`](./.npmrc) config for consuming `thomashagstrom` org scoped pac
 @thomashagstrom:registry=https://npm.pkg.github.com/thomashagstrom
 //npm.pkg.github.com/:_authToken=MyTopSecretTokenWithPackageScope
 ```
+
+## Configuration
+
+Code quality is set up for you with `prettier`, `husky`, and `lint-staged`. Adjust the respective fields in `package.json` accordingly.
+
+### Jest
+
+The project uses [**Jest**](https://jestjs.io/docs/tutorial-react-native) to run unit tests. Together with [Testing Library React Native](https://testing-library.com/docs/react-native-testing-library/intro/) it allows powerful testing capabilities without use of a real device.
+
+See also: _[WritingTests.md](./WritingTests.md)_
+
+Find all available commands in [`package.json`](./package.json#L26-L34).
+
+The `test` command uses CI config, so when developing use below command for optimal performance.
+
+```
+npm run test:dev # or yarn test:dev
+```
+
+Jest has a `--watch` parameter that looks for changed files and only tests your changes, in real time. There's an alias for this parameter:
+
+```
+npm run test:watch # or yarn test:watch
+```
+
+### Bundle Analysis
+
+[`size-limit`](https://github.com/ai/size-limit) is set up to calculate the real cost of your library with `npm run size` and visualize the bundle with `npm run analyze`.
+
+#### Setup Files
+
+This is the folder structure we set up for you:
+
+```txt
+/src
+  index.tsx       # EDIT THIS
+/test
+  blah.test.tsx   # EDIT THIS
+.gitignore
+package.json
+README.md         # EDIT THIS
+tsconfig.json
+```
+
+### Rollup
+
+TSDX uses [Rollup](https://rollupjs.org) as a bundler and generates multiple rollup configs for various module formats and build settings.
+
+This is not very optimal for React-Native with Babel so we've opted for regular TypeScript build instead.
+
+### TypeScript
+
+`tsconfig.json` is set up to interpret `dom` and `esnext` types, as well as `react` for `jsx`. Adjust according to your needs.
 
 ## Contributors ✨
 
