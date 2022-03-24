@@ -1,7 +1,7 @@
 {
   "name": "@thomashagstrom/npm-github-react-native",
   "author": "Thomas Hagström",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "APACHE",
   "publishConfig": {
     "@thomashagstrom:registry": "https://npm.pkg.github.com",
