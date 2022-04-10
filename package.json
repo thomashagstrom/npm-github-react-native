@@ -37,7 +37,7 @@
     "contr:generate": "all-contributors generate",
     "ios": "expo start --ios",
     "lint:ci": "tsdx lint",
-    "lint": "tsdx lint src --fix --ignore-pattern **/*.test.ts",
+    "lint": "tsdx lint src --fix",
     "postversion": "git push && git push --tags",
     "prepare": "npm run build && husky install",
     "preversion": "npm run lint && npm run test",

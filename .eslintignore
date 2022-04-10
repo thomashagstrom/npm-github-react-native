@@ -15,7 +15,6 @@ config
 **/functions/lib/*
 .expo
 web-build
-**/*.test.ts
 dist
 __mocks__
 babel.config.js

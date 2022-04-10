@@ -35,6 +35,7 @@ test-report.html
 .env.test.local
 .env.production.local
 .history
+.expo
 
 # yarn
 npm-debug.log*
