@@ -15,31 +15,31 @@ This template allows you to bootstrap a private React-Native NPM package hosted 
 
 [![](https://media.giphy.com/media/wqS44mdZqYgHpLXv4j/giphy.gif)](#run-storybook)
 
-* [Getting started](#getting-started)
-  + [Requirements](#requirements)
-  + [Recommended tools](#recommended-tools)
+- [Getting started](#getting-started)
+  - [Requirements](#requirements)
+  - [Recommended tools](#recommended-tools)
     - [VS Code plugins](#vs-code-plugins)
-  + [Installation](#installation)
-* [Build](#build)
-* [Expo](#expo)
-* [Run Storybook](#run-storybook)
-  + [iOS](#ios)
-  + [Android](#android)
-* [Linting](#linting)
-* [Continuous Integration](#continuous-integration)
-  + [GitHub Actions](#github-actions)
-* [Optimizations](#optimizations)
-* [Module Formats](#module-formats)
-* [Named Exports](#named-exports)
-* [Publish a new version](#publish-a-new-version)
-* [Consume package](#consume-package)
-* [Configuration](#configuration)
-  + [Jest](#jest)
-  + [Bundle Analysis](#bundle-analysis)
+  - [Installation](#installation)
+- [Build](#build)
+- [Expo](#expo)
+- [Run Storybook](#run-storybook)
+  - [iOS](#ios)
+  - [Android](#android)
+- [Linting](#linting)
+- [Continuous Integration](#continuous-integration)
+  - [GitHub Actions](#github-actions)
+- [Optimizations](#optimizations)
+- [Module Formats](#module-formats)
+- [Named Exports](#named-exports)
+- [Publish a new version](#publish-a-new-version)
+- [Consume package](#consume-package)
+- [Configuration](#configuration)
+  - [Jest](#jest)
+  - [Bundle Analysis](#bundle-analysis)
     - [Setup Files](#setup-files)
-  + [Rollup](#rollup)
-  + [TypeScript](#typescript)
-* [Contributors ✨](#contributors--)
+  - [Rollup](#rollup)
+  - [TypeScript](#typescript)
+- [Contributors ✨](#contributors--)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
@@ -50,7 +50,6 @@ Follow the **[React-Native Expo installation guide](https://reactnative.dev/docs
 This project is bootstrapped using [TSDX](https://tsdx.io/), but with some heavy modifications to produce React-Native Expo compatible code.
 
 > There is no fancy auto renaming CLI so make sure to change [package name](./package.json#L2) the first thing you do.
-
 
 > This TSDX setup is meant for developing libraries (not apps!) that can be published to NPM. If you’re looking to build a Node app, you could use `ts-node-dev`, plain `ts-node`, or simple `tsc`.
 
@@ -239,6 +238,14 @@ Example [`npmrc`](./.npmrc) config for consuming `thomashagstrom` org scoped pac
 ```
 @thomashagstrom:registry=https://npm.pkg.github.com/thomashagstrom
 //npm.pkg.github.com/:_authToken=MyTopSecretTokenWithPackageScope
+```
+
+Install the dev [**peerDependencies**](./package.json#L53-L59). At this time:
+
+```bash
+npm i --save expo, react, react-native, react-native-paper, react-native-web
+#or
+npm i --save expo, react, react-native, react-native-paper, react-native-web
 ```
 
 ## Configuration
