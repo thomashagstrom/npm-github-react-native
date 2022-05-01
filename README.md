@@ -4,6 +4,8 @@
 
 This [React-Native](https://reactnative.dev/) [Expo](https://docs.expo.dev/) template allows you to bootstrap a *private* **NPM package** hosted on GitHub, perfect for propritory modules within your organisation! You will be able to consume it in your main app using a [GitHub access token](#consume-package).
 
+You will be able to run [Storybook](#storybook) for both native and web to QA and using **[WritingTests](./WritingTests.md)** you can keep up the 100 % test coverage.
+
 ![React Native](https://img.shields.io/badge/react_native-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) [![Expo](https://img.shields.io/badge/expo-blue?style=for-the-badge&logo=expo&logoColor=white)](#expo)
 [![Storybook](https://img.shields.io/badge/-Storybook-FF4785?style=for-the-badge&logo=storybook&logoColor=white)](#run-storybook)
 [![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)](#typescript)
@@ -13,7 +15,8 @@ This [React-Native](https://reactnative.dev/) [Expo](https://docs.expo.dev/) tem
 [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/thomashagstrom/npm-github-react-native) [![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 ](#recommended-tools) [![NPM](https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white)](https://github.com/thomashagstrom/npm-github-react-native/packages/)
 
-[![](https://media.giphy.com/media/wqS44mdZqYgHpLXv4j/giphy.gif)](#run-storybook)
+[![](https://media.giphy.com/media/wqS44mdZqYgHpLXv4j/giphy.gif)
+![](https://media.giphy.com/media/QKhOzr9WAG5yLAfdJ3/giphy.gif)](#run-storybook)
 
   * [Using this template](#using-this-template)
     + [Configure package](#configure-package)
