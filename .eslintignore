@@ -18,3 +18,4 @@ web-build
 dist
 __mocks__
 babel.config.js
+jest-setup.js
