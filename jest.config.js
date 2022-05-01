@@ -20,14 +20,14 @@ module.exports = {
   ],
   restoreMocks: true,
   automock: false,
-  // coverageThreshold: {
-  //   global: {
-  //     branches: 50,
-  //     functions: 50,
-  //     lines: 50,
-  //     statements: -30,
-  //   },
-  // },
+  coverageThreshold: {
+    global: {
+      branches: 100,
+      functions: 100,
+      lines: 100,
+      statements: 100,
+    },
+  },
   collectCoverage: true,
   collectCoverageFrom: [
     '**/*.{ts,tsx}',
