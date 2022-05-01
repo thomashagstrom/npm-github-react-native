@@ -2,9 +2,9 @@
 
 # GitHub NPM Package RN Expo TS Template
 
-This template allows you to bootstrap a private React-Native NPM package hosted on GitHub, perfect for propritory code within your organisation!
+This [React-Native](https://reactnative.dev/) [Expo](https://docs.expo.dev/) template allows you to bootstrap a *private* **NPM package** hosted on GitHub, perfect for propritory modules within your organisation! You will be able to consume it in your main app using a [GitHub access token](#consume-package).
 
-![React Native](https://img.shields.io/badge/react_native-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) [![Expo](https://img.shields.io/badge/expo-blue?style=for-the-badge&logo=expo&logoColor=%000000)](#expo)
+![React Native](https://img.shields.io/badge/react_native-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) [![Expo](https://img.shields.io/badge/expo-blue?style=for-the-badge&logo=expo&logoColor=white)](#expo)
 [![Storybook](https://img.shields.io/badge/-Storybook-FF4785?style=for-the-badge&logo=storybook&logoColor=white)](#run-storybook)
 [![TypeScript](https://img.shields.io/badge/typescript-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)](#typescript)
 [![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white)](#jest) [![Testing-Library](https://img.shields.io/badge/-TestingLibrary-%23E33332?style=for-the-badge&logo=testing-library&logoColor=white)
@@ -15,35 +15,80 @@ This template allows you to bootstrap a private React-Native NPM package hosted 
 
 [![](https://media.giphy.com/media/wqS44mdZqYgHpLXv4j/giphy.gif)](#run-storybook)
 
-- [Getting started](#getting-started)
-  - [Requirements](#requirements)
-  - [Recommended tools](#recommended-tools)
-    - [VS Code plugins](#vs-code-plugins)
-  - [Installation](#installation)
-- [Build](#build)
-- [Expo](#expo)
-- [Run Storybook](#run-storybook)
-  - [iOS](#ios)
-  - [Android](#android)
-- [Linting](#linting)
-- [Continuous Integration](#continuous-integration)
-  - [GitHub Actions](#github-actions)
-- [Optimizations](#optimizations)
-- [Module Formats](#module-formats)
-- [Named Exports](#named-exports)
-- [Publish a new version](#publish-a-new-version)
-- [Consume package](#consume-package)
-- [Configuration](#configuration)
-  - [Jest](#jest)
-  - [Bundle Analysis](#bundle-analysis)
-    - [Setup Files](#setup-files)
-  - [Rollup](#rollup)
-  - [TypeScript](#typescript)
-- [Contributors ✨](#contributors--)
+  * [Using this template](#using-this-template)
+    + [Configure package](#configure-package)
+  * [Developing](#developing)
+    + [Requirements](#requirements)
+    + [Recommended tools](#recommended-tools)
+    + [Recommended plugins](#recommended-plugins)
+    + [Installation](#installation)
+  * [Build](#build)
+  * [Expo](#expo)
+  * [Storybook](#storybook)
+    + [iOS](#ios)
+    + [Android](#android)
+    + [Configure storybook](#configure-storybook)
+  * [Linting](#linting)
+  * [Continuous Integration](#continuous-integration)
+    + [GitHub Actions](#github-actions)
+  * [Optimizations](#optimizations)
+  * [Module Formats](#module-formats)
+  * [Named Exports](#named-exports)
+  * [Publish a new version](#publish-a-new-version)
+  * [Consume package](#consume-package)
+    + [Peer dependencies](#peer-dependencies)
+  * [Configure libs](#configure-libs)
+    + [Jest](#jest)
+    + [Bundle Analysis](#bundle-analysis)
+      - [Setup Files](#setup-files)
+    + [Rollup](#rollup)
+    + [TypeScript](#typescript)
+  * [Contributors ✨](#contributors--)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
-## Getting started
+## Using this template
+When you use this template you will get a React-Native Expo repo that's almost ready to be build and deployed to GitHub as a private NPM package.
+
+### Configure package
+Make sure to update **package name** in [package.json](./package.json#L2) as well as **publishConfig**  in [package.json](./package.json#L6). 
+
+You will probably want to change the **license** field from `APACHE` (this repo) to `UNLICENSED` (private repo) too.
+
+For organisation "expohacks" the config would look like this.
+
+> Replace "expohacks" with your organisation name and "npm-github-react-native" with the package name
+
+```json
+// package.json
+{
+  "name": "@expohacks/npm-github-react-native",
+  "author": "Expo Hackers",
+  "version": "0.1.1",
+  "license": "UNLICENCED",
+  "publishConfig": {
+    "@ expohacks:registry": "https://npm.pkg.github.com",
+    "access": "restricted"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/expohacks/npm-github-react-native.git"
+  },
+  "bugs": {
+    "url": "https://github.com/expohacks/npm-github-react-native/issues"
+  },
+  "homepage": "https://github.com/expohacks/npm-github-react-native#readme",
+  ...
+}
+```
+
+Optionally configure Expo [app.json](./app.json).
+
+**Read more: **
+
+- [Publish a new version](#publish-a-new-version)
+
+## Developing
 
 Follow the **[React-Native Expo installation guide](https://reactnative.dev/docs/environment-setup)** to set up a developer environment.
 
@@ -68,7 +113,7 @@ This project is bootstrapped using [TSDX](https://tsdx.io/), but with some heavy
 
 Optionally install [Yarn](https://classic.yarnpkg.com/en/) - a fast package manager for installing NPM dependencies. However, do not add new packages using Yarn as that would create a yarn.lock.
 
-#### VS Code plugins
+### Recommended plugins
 
 Just a recommendation based on what worked for this developer:
 
@@ -118,7 +163,7 @@ The app is built using [Expo](https://docs.expo.io/) for React-Native. It allows
 - [app.json](./app.json) - Expo config
 - [expo](./.expo/README.md) - shared Expo config for all developers
 
-## Run Storybook
+## Storybook
 
 The app is integrated with [Storybook](https://github.com/storybookjs/react-native) which provides an environment to develop and test components in isolation.
 
@@ -144,6 +189,7 @@ npm run ios # or yarn ios
 npm run android # or yarn android
 ```
 
+### Configure storybook
 Configuration is found in the [storybook/index.tsx](./storybook/index.tsx) entry point. Stories are added to [storybook/stories/index.tsx](./storybook/stories/index.tsx).
 
 For a new component stories should be added that replicate the requirements like Figma designs.
@@ -155,6 +201,7 @@ _[LoginForm.stories.tsx](storybook/stories/LoginForm/LoginForm.stories.tsx)_
 Notice how we use `text` and `action` from storybook to make these dynamic values that can be changed in the storybook knobs UI:
 
 ```typescript
+// LoginForm.stories.tsx
 import {action} from '@storybook/addon-actions';
 import {text} from '@storybook/addon-knobs';
 import {storiesOf} from '@storybook/react-native';
@@ -219,10 +266,11 @@ Per Palmer Group guidelines, [always use named exports.](https://github.com/palm
 
 ## Publish a new version
 
-1. Up [version](https://docs.npmjs.com/about-semantic-versioning) in [`package.json`](./package.json) using the script `npm run version:next` or `yarn version:next`
-2. Above should tag and push
-3. [Draft a new Release](https://github.com/thomashagstrom/npm-github/releases) from that tag
-4. GitHub Action builds and publishes
+1. Commit and push your feature.
+2. Up [version](https://docs.npmjs.com/about-semantic-versioning) in [`package.json`](./package.json) using the script `npm run version:next` or `yarn version:next`. This will tag and push to your branch.
+3. PR and merge your branch.
+4. [Draft a new Release](https://github.com/thomashagstrom/npm-github/releases) from that the new tag.
+5. GitHub Action builds and publishes. The package becomes available in "packages" GitHub page.
 
 ## Consume package
 
@@ -235,20 +283,21 @@ These details are valid if the package is private scoped.
 
 Example [`npmrc`](./.npmrc) config for consuming `thomashagstrom` org scoped packages:
 
+> replace "thomashagstrom" with your organisation name
+
 ```
 @thomashagstrom:registry=https://npm.pkg.github.com/thomashagstrom
 //npm.pkg.github.com/:_authToken=MyTopSecretTokenWithPackageScope
 ```
-
-Install the dev [**peerDependencies**](./package.json#L53-L59). At this time:
+### Peer dependencies
+Install the dev [**peerDependencies**](./package.json#L53-L65). At this time:
 
 ```bash
-npm i --save expo, react, react-native, react-native-paper, react-native-web
-#or
-npm i --save expo, react, react-native, react-native-paper, react-native-web
+npm i --save expo react react-native react-native-paper react-native-web @react-navigation/core @react-navigation/native @react-navigation/stack react-native-gesture-handler react-native-safe-area-context@3.3.2 react-native-screens react-native-web
+# or yarn
 ```
 
-## Configuration
+## Configure libs
 
 Code quality is set up for you with `prettier`, `husky`, and `lint-staged`. Adjust the respective fields in `package.json` accordingly.
 
