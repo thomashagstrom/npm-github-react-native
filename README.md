@@ -84,7 +84,7 @@ For organisation "expohacks" the config would look like this.
 
 Optionally configure Expo [app.json](./app.json).
 
-**Read more: **
+**Read more:**
 
 - [Publish a new version](#publish-a-new-version)
 
