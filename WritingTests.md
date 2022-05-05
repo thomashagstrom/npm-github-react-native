@@ -2,10 +2,15 @@
 
 - [Integration tests](#integration-tests)
 - [Writing Unit tests](#writing-unit-tests)
+- [Error handling](#error-handling)
+  - [Test thrown errors](#test-thrown-errors)
+  - [Test Promise reject](#test-promise-reject)
+  - [Test](#test)
 - [Writing component tests](#writing-component-tests)
 - [Fire events](#fire-events)
 - [Testing hooks](#testing-hooks)
 - [Writing mocks](#writing-mocks)
+  - [Mock once](#mock-once)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
@@ -38,12 +43,12 @@ export const formatDate = (
 ) => {
   if (!dateTimeUtc) return '';
 
-  const dateTime = dateTimeUtc as unknown as MockableDate;
+  const dateTime = (dateTimeUtc as unknown) as MockableDate;
 
   return format(
     dateTime.unixms ||
-      (dateTime as unknown as number) ||
-      (dateTime as unknown as Date),
+      ((dateTime as unknown) as number) ||
+      ((dateTime as unknown) as Date),
     dateFormat,
   );
 };
@@ -78,6 +83,34 @@ You see it imports the dateFormat file at the top. It then uses jest `describe` 
 The `it` block (or `test`) tests one single [test scenario](https://www.guru99.com/test-scenario.html). E.G "when this value result should be this".
 
 The jest function `expect` takes in an object - the result - and then use [test matchers](https://jestjs.io/docs/using-matchers) to evaluate the result.
+
+## Error handling
+
+### Test thrown errors
+
+You can verify that a certain scenario throws:
+
+```typescript
+test('When no profile then `Error`', async () => {
+  await expect(UpdateUser(undefined as any, '1', false)).rejects.toThrowError(
+    'UpdateUser: profile property not set',
+  );
+});
+```
+
+### Test Promise reject
+
+Similary to above you can test that a promise rejects
+
+```typescript
+test('When no profile then `Error`', async () => {
+  await expect(UpdateUser(undefined as any, '1', false)).rejects.toEqual(
+    'UpdateUser: profile property not set',
+  );
+});
+```
+
+### Test
 
 ## Writing component tests
 
@@ -140,9 +173,9 @@ In our test we search for a specific text element using [`findByText`](https://t
 
 ```typescript
 test('Should have LoginForm title', () => {
-      const {findByText} = render(<LoginForm onLogin={jest.fn()} />);
-      expect(findByText('LoginForm')).toBeDefined();
-    });
+  const {findByText} = render(<LoginForm onLogin={jest.fn()} />);
+  expect(findByText('LoginForm')).toBeDefined();
+});
 ```
 
 We have now (shallow) rendered the component (if found) and can inspec it's `children` and `props`.
