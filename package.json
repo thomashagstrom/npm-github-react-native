@@ -132,6 +132,7 @@
     "react-native-web": "^0.17.1",
     "react-test-renderer": "^17.0.1",
     "rollup": "^2.70.0",
+    "sentry-expo": "^4.1.1",
     "size-limit": "^7.0.8",
     "tsdx": "^0.14.1",
     "tslib": "^2.3.1",

@@ -1,7 +1,10 @@
 global.__reanimatedWorkletInit = () => {};
-// jest.mock('react-native-reanimated', () =>
-//   require('react-native-reanimated/mock'),
-// );
+
+const FRAME_TIME = 10;
+
+global.requestAnimationFrame = cb => {
+  setTimeout(cb, FRAME_TIME);
+};
 
 import 'react-native-gesture-handler/jestSetup';
 
@@ -15,6 +18,11 @@ jest.mock('react-native-reanimated', () => {
   return Reanimated;
 });
 
-// https://github.com/necolas/react-native-web/issues/1693
-// Silence the warning: Animated: `useNativeDriver` is not supported because the native animated module is missing
-// jest.mock('react-native/Libraries/Animated/NativeAnimatedHelper');
+jest.mock('sentry-expo', () => ({
+  init: () => jest.fn(),
+  Native: {
+    captureException: jest.fn(),
+  },
+}));
+
+jest.useFakeTimers('modern');
