@@ -9,7 +9,15 @@ module.exports = {
     '<rootDir>/dist',
     '<rootDir>/storybook',
   ],
-  transformIgnorePatterns: ['\\.snap$', '<rootDir>/dist'],
+  setupFiles: [
+    './node_modules/react-native-gesture-handler/jestSetup.js',
+    './jest-setup.js',
+  ],
+  transformIgnorePatterns: [
+    '\\.snap$',
+    '<rootDir>/dist',
+    'node_modules/(?!((jest-)?react-native|@react-native(-community)?)|expo(nent)?|@expo(nent)?/.*|@expo-google-fonts/.*|react-navigation|@react-navigation/.*|@unimodules/.*|unimodules|sentry-expo|native-base|react-native-svg|@thomashagstrom/.*)',
+  ],
   testRegex: '(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$',
   testMatch: null,
   moduleDirectories: ['node_modules'],
@@ -20,14 +28,6 @@ module.exports = {
   ],
   restoreMocks: true,
   automock: false,
-  coverageThreshold: {
-    global: {
-      branches: 100,
-      functions: 100,
-      lines: 100,
-      statements: 100,
-    },
-  },
   collectCoverage: true,
   collectCoverageFrom: [
     '**/*.{ts,tsx}',
