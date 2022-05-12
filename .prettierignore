@@ -18,3 +18,4 @@ web-build
 __mocks__
 babel.config.js
 jest-setup.js
+metro.config.js
