@@ -39,6 +39,21 @@ module.exports = {
     '!**/__snapshots__/**',
     '!**/index.ts',
   ],
+  coverageThreshold: {
+    global: {
+      branches: 100,
+      functions: 100,
+      lines: 100,
+      statements: 100,
+    },
+    // To make exceptions:
+    // './src/features/login/LoginForm.tsx': {
+    //   branches: 87,
+    //   functions: 100,
+    //   lines: 100,
+    //   statements: 100,
+    // },
+  },
   reporters: [
     'default',
     'jest-junit',

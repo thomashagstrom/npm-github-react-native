@@ -87,9 +87,10 @@ For organisation "expohacks" the config would look like this.
 
 Optionally configure Expo [app.json](./app.json).
 
-**Read more:**
+**Next:**
 
 - [Publish a new version](#publish-a-new-version)
+- [Consume package](#consume-package)
 
 ## Developing
 
