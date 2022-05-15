@@ -2,7 +2,7 @@
 
 # GitHub NPM Package RN Expo TS Template
 
-This [React-Native](https://reactnative.dev/) [Expo](https://docs.expo.dev/) template allows you to bootstrap a *private* **NPM package** hosted on GitHub, perfect for propritory modules within your organisation! You will be able to consume it in your main app using a [GitHub access token](#consume-package).
+This [React-Native](https://reactnative.dev/) [Expo](https://docs.expo.dev/) template allows you to bootstrap a _private_ **NPM package** hosted on GitHub, perfect for propritory modules within your organisation! You will be able to consume it in your main app using a [GitHub access token](#consume-package).
 
 You will be able to run [Storybook](#storybook) for both native and web to QA and using **[WritingTests](./WritingTests.md)** you can keep up the 100 % test coverage.
 
@@ -13,48 +13,50 @@ You will be able to run [Storybook](#storybook) for both native and web to QA an
 ](#jest) [![ESLint](https://img.shields.io/badge/ESLint-4B3263?style=for-the-badge&logo=eslint&logoColor=white)](#linting) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=for-the-badge)](https://github.com/prettier/prettier)
 [![GitHub Actions](https://img.shields.io/badge/github%20actions-%232671E5.svg?style=for-the-badge&logo=githubactions&logoColor=white)](https://github.com/thomashagstrom/npm-github-react-native/actions/new)
 [![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)](https://github.com/thomashagstrom/npm-github-react-native) [![Visual Studio Code](https://img.shields.io/badge/Visual%20Studio%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
-](#recommended-tools) [![NPM](https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white)](https://github.com/thomashagstrom/npm-github-react-native/packages/)
+](#recommended-tools) [![NPM](https://img.shields.io/badge/NPM-%23000000.svg?style=for-the-badge&logo=npm&logoColor=white)](https://github.com/thomashagstrom/npm-github-react-native/packages/) [![Node.js Package](https://github.com/thomashagstrom/npm-github-react-native/actions/workflows/npm-publish.yml/badge.svg?branch=main)](https://github.com/thomashagstrom/npm-github-react-native/actions/workflows/npm-publish.yml)
 
 [![](https://media.giphy.com/media/wqS44mdZqYgHpLXv4j/giphy.gif)
 ![](https://media.giphy.com/media/QKhOzr9WAG5yLAfdJ3/giphy.gif)](#run-storybook)
 
-  * [Using this template](#using-this-template)
-    + [Configure package](#configure-package)
-  * [Developing](#developing)
-    + [Requirements](#requirements)
-    + [Recommended tools](#recommended-tools)
-    + [Recommended plugins](#recommended-plugins)
-    + [Installation](#installation)
-  * [Build](#build)
-  * [Expo](#expo)
-  * [Storybook](#storybook)
-    + [iOS](#ios)
-    + [Android](#android)
-    + [Configure storybook](#configure-storybook)
-  * [Linting](#linting)
-  * [Continuous Integration](#continuous-integration)
-    + [GitHub Actions](#github-actions)
-  * [Optimizations](#optimizations)
-  * [Module Formats](#module-formats)
-  * [Named Exports](#named-exports)
-  * [Publish a new version](#publish-a-new-version)
-  * [Consume package](#consume-package)
-    + [Peer dependencies](#peer-dependencies)
-  * [Configure libs](#configure-libs)
-    + [Jest](#jest)
-    + [Bundle Analysis](#bundle-analysis)
-      - [Setup Files](#setup-files)
-    + [Rollup](#rollup)
-    + [TypeScript](#typescript)
-  * [Contributors ✨](#contributors--)
+- [Using this template](#using-this-template)
+  - [Configure package](#configure-package)
+- [Developing](#developing)
+  - [Requirements](#requirements)
+  - [Recommended tools](#recommended-tools)
+  - [Recommended plugins](#recommended-plugins)
+  - [Installation](#installation)
+- [Build](#build)
+- [Expo](#expo)
+- [Storybook](#storybook)
+  - [iOS](#ios)
+  - [Android](#android)
+  - [Configure storybook](#configure-storybook)
+- [Linting](#linting)
+- [Continuous Integration](#continuous-integration)
+  - [GitHub Actions](#github-actions)
+- [Optimizations](#optimizations)
+- [Module Formats](#module-formats)
+- [Named Exports](#named-exports)
+- [Publish a new version](#publish-a-new-version)
+- [Consume package](#consume-package)
+  - [Peer dependencies](#peer-dependencies)
+- [Configure libs](#configure-libs)
+  - [Jest](#jest)
+  - [Bundle Analysis](#bundle-analysis)
+    - [Setup Files](#setup-files)
+  - [Rollup](#rollup)
+  - [TypeScript](#typescript)
+- [Contributors ✨](#contributors--)
 
 <small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'>Table of contents generated with markdown-toc</a></i></small>
 
 ## Using this template
+
 When you use this template you will get a React-Native Expo repo that's almost ready to be build and deployed to GitHub as a private NPM package.
 
 ### Configure package
-Make sure to update **package name** in [package.json](./package.json#L2) as well as **publishConfig**  in [package.json](./package.json#L6). 
+
+Make sure to update **package name** in [package.json](./package.json#L2) as well as **publishConfig** in [package.json](./package.json#L6).
 
 You will probably want to change the **license** field from `APACHE` (this repo) to `UNLICENSED` (private repo) too.
 
@@ -194,6 +196,7 @@ npm run android # or yarn android
 ```
 
 ### Configure storybook
+
 Configuration is found in the [storybook/index.tsx](./storybook/index.tsx) entry point. Stories are added to [storybook/stories/index.tsx](./storybook/stories/index.tsx).
 
 For a new component stories should be added that replicate the requirements like Figma designs.
@@ -293,7 +296,9 @@ Example [`npmrc`](./.npmrc) config for consuming `thomashagstrom` org scoped pac
 @thomashagstrom:registry=https://npm.pkg.github.com/thomashagstrom
 //npm.pkg.github.com/:_authToken=MyTopSecretTokenWithPackageScope
 ```
+
 ### Peer dependencies
+
 Install the dev [**peerDependencies**](./package.json#L53-L65). At this time:
 
 ```bash
