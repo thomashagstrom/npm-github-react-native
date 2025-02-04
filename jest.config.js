@@ -28,7 +28,7 @@ module.exports = {
   ],
   restoreMocks: true,
   automock: false,
-  collectCoverage: true,
+  collectCoverage: false,
   collectCoverageFrom: [
     '**/*.{ts,tsx}',
     '!**/node_modules/**',
