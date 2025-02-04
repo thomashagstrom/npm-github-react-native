@@ -8,7 +8,7 @@ import FeatureTestIds from '../FeatureTestIds';
  * Props for {@link LoginForm}
  * @typedef LoginFormProps
  */
-export type LoginFormProps = {
+export type LoginFormProps = React.PropsWithChildren & {
   /**
    * Occurs when the user successfully submits login.
    * @prop
