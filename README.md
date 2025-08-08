@@ -87,6 +87,13 @@ For organisation "expohacks" the config would look like this.
 }
 ```
 
+Update the [.npmrc](./.npmrc) to match your new organization id
+
+```json
+// .npmrc
+@expohacks
+```
+
 Optionally configure Expo [app.json](./app.json).
 
 **Next:**
@@ -243,7 +250,7 @@ npm run lint # or yarn lint
 Two actions are added by default:
 
 - `main` which installs deps w/ cache, lints, tests, and builds on all pushes against a Node and OS matrix
-- `size` which comments cost comparison of your library on every pull request using [`size-limit`](https://github.com/ai/size-limit)
+- `npm-publish` used to **[publish a new version](#publish-a-new-version)**
 
 ## Optimizations
 
@@ -272,6 +279,13 @@ The appropriate paths are configured in `package.json` and `dist/index.js` accor
 Per Palmer Group guidelines, [always use named exports.](https://github.com/palmerhq/typescript#exports) Code split inside your React app instead of your React library.
 
 ## Publish a new version
+
+Make sure this package has [.npmrc](./.npmrc) to match your organization id, e.g. "@expohacks"
+
+```json
+// .npmrc
+@expohacks:registry=https://npm.pkg.github.com
+```
 
 1. Commit and push your feature.
 2. Up [version](https://docs.npmjs.com/about-semantic-versioning) in [`package.json`](./package.json) using the script `npm run version:next` or `yarn version:next`. This will tag and push to your branch.
